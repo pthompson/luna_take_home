@@ -34,6 +34,7 @@ defmodule LunaTakeHome.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.6.14"},
+      {:tailwind, "~> 0.1.9", runtime: Mix.env() == :dev},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.17.5"},
@@ -59,7 +60,7 @@ defmodule LunaTakeHome.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
     ]
   end
 end
