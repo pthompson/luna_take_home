@@ -67,7 +67,7 @@ config :tailwind,
 config :luna_take_home, Oban,
   repo: LunaTakeHome.Repo,
   plugins: [Oban.Plugins.Pruner],
-  queues: [default: 10]
+  queues: [og_image: 10]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
