@@ -7,6 +7,15 @@
 # General application configuration
 import Config
 
+config :luna_take_home, LunaTakeHome.Repo,
+  database: "luna_take_home_repo",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"
+
+config :luna_take_home,
+  ecto_repos: [LunaTakeHome.Repo]
+
 # Configures the endpoint
 config :luna_take_home, LunaTakeHomeWeb.Endpoint,
   url: [host: "localhost"],

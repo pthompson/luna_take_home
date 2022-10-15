@@ -8,6 +8,8 @@ defmodule LunaTakeHome.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      # Start Repo
+      LunaTakeHome.Repo,
       # Start the Telemetry supervisor
       LunaTakeHomeWeb.Telemetry,
       # Start the PubSub system
