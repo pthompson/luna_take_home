@@ -49,7 +49,8 @@ defmodule LunaTakeHome.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:httpoison, "~> 1.8"},
       {:ecto_sql, "~> 3.0"},
-      {:postgrex, ">= 0.0.0"}
+      {:postgrex, ">= 0.0.0"},
+      {:oban, "~> 2.13"}
     ]
   end
 

@@ -10,6 +10,8 @@ defmodule LunaTakeHome.Application do
     children = [
       # Start Repo
       LunaTakeHome.Repo,
+      # Start Oban
+      {Oban, Application.fetch_env!(:luna_take_home, Oban)},
       # Start the Telemetry supervisor
       LunaTakeHomeWeb.Telemetry,
       # Start the PubSub system

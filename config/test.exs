@@ -8,11 +8,13 @@ config :luna_take_home, LunaTakeHomeWeb.Endpoint,
   server: false
 
 # In test we don't send emails.
-config :luna_take_home, LunaTakeHome.Mailer,
-  adapter: Swoosh.Adapters.Test
+config :luna_take_home, LunaTakeHome.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# Prevent Oban from running jobs and plugins during test runs
+config :luna_take_home, Oban, testing: :inline
