@@ -1,0 +1,27 @@
+<div class="ml-12 mr-12 mt-20">
+  <h1 class="text-3xl font-semibold text-[#492B5E] tracking-wide">OG Image Viewer</h1>
+  <.form
+         class="mt-16"
+         let={f}
+         for={@changeset}
+         as={:og_image_request}
+         id="og-image-url-form"
+         phx-submit="get_og_image">
+
+    <div class="flex">
+      <div>
+        <%= label f, :url, class: "block text-sm font-medium text-gray-700" %>
+        <div class="mt-1">
+          <%= text_input f, :url, class: "block w-96 rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm" %>
+        </div>
+        <div class="mt-5">
+          <%= error_tag f, :url %>
+        </div>
+      </div>
+
+      <div class="mt-6 ml-4">
+        <%= submit "Retrieve", phx_disable_with: "Retrieving...", class: "inline-flex items-center rounded-md border border-transparent bg-purple-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2" %>
+      </div>
+    </div>
+  </.form>
+</div>

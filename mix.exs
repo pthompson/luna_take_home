@@ -50,6 +50,7 @@ defmodule LunaTakeHome.MixProject do
       {:httpoison, "~> 1.8"},
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
+      {:phoenix_ecto, "~> 4.4"},
       {:oban, "~> 2.13"}
     ]
   end

@@ -1,5 +1,6 @@
 defmodule LunaTakeHomeWeb.Router do
   use LunaTakeHomeWeb, :router
+  alias LunaTakeHomeWeb
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -17,7 +18,7 @@ defmodule LunaTakeHomeWeb.Router do
   scope "/", LunaTakeHomeWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", OGImageLive.Show, :show
   end
 
   # Other scopes may use custom stacks.
