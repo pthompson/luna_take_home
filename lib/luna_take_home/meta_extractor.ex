@@ -57,7 +57,7 @@ defmodule LunaTakeHome.MetaExtractor do
         |> format_result(property)
 
       _ ->
-        {:error, "document does not contain meta property '#{property}'"}
+        {:error, "page does not contain meta property '#{property}'"}
     end
   end
 
@@ -65,5 +65,5 @@ defmodule LunaTakeHome.MetaExtractor do
     do: {:ok, hd(list)}
 
   defp format_result(_, property),
-    do: {:error, "document does not contain meta property '#{property}'"}
+    do: {:error, "page does not contain meta property '#{property}'"}
 end

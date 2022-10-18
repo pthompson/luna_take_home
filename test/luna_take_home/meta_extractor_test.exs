@@ -13,7 +13,7 @@ defmodule LunaTakeHome.MetaExtractorTest do
     test "error: returns error if page at url does not contain og:image property" do
       # This test is fragile, as it depends on a live site that could change. With more time
       # we would probably want a more robust test strategy, such as creating a mock.
-      assert {:error, "document does not contain meta property 'og:image'"} =
+      assert {:error, "page does not contain meta property 'og:image'"} =
                MetaExtractor.get_og_image("https://portland.craigslist.org")
     end
 
