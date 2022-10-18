@@ -1,7 +1,8 @@
 <div class="ml-12 mr-12 mt-20">
   <h1 class="text-3xl font-semibold text-[#492B5E] tracking-wide">OG Image Viewer</h1>
+  <p class="text-gray-500 text-lg tracking-wide mt-2">Enter a url to view page's og_image</p>
   <.form
-         class="mt-16"
+         class="mt-12"
          let={f}
          for={@changeset}
          as={:og_image_request}
@@ -20,8 +21,23 @@
       </div>
 
       <div class="mt-6 ml-4">
-        <%= submit "Retrieve", phx_disable_with: "Retrieving...", class: "inline-flex items-center rounded-md border border-transparent bg-purple-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2" %>
+        <%= submit "Fetch", phx_disable_with: "Fetching...", class: "inline-flex items-center rounded-md border border-transparent bg-purple-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2" %>
       </div>
     </div>
   </.form>
+  <div class="mt-14">
+    <%= cond do %>
+    <% @fetching? -> %>
+    <p class="text-lg text-gray-700">Fetching og_image from <%= @url %></p>
+
+    <% !is_nil(@og_image_url) && is_nil(@fetch_error) -> %>
+    <img src={@og_image_url} alt="og_image url for #{@url}">
+
+    <% is_nil(@og_image_url) && !is_nil(@fetch_error) -> %>
+    <p class="text-lg text-red-700">Error: <%= @fetch_error %></p>
+
+    <% true -> %>
+    <div></div>
+    <% end %>
+  </div>
 </div>
