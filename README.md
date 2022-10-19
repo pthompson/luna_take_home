@@ -28,7 +28,9 @@ Here is how it works:
 8. If the lookup was successful then the image is displayed in the
    LiveView, otherwise an error message is displayed.
 
-For production, we would want to add more tests.
+For production, it would probably be a good idea to add a timeout using
+send_after in case the og image worker never returns. Also, we would
+want to add more tests.
 
 To start the Phoenix server:
 
