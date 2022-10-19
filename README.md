@@ -28,6 +28,8 @@ Here is how it works:
 8. If the lookup was successful then the image is displayed in the
    LiveView, otherwise an error message is displayed.
 
+For production, we would want to add more tests.
+
 To start the Phoenix server:
 
   * Install dependencies with `mix deps.get`
