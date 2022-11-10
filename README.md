@@ -1,7 +1,6 @@
 # LunaTakeHome
 
-This project is a solution for the "Build an Open Graph previewer" take home project
-for Luna Engineering.
+This project is a solution for the "Build an Open Graph previewer" take home project.
 
 The project is implemented as a Phoenix LiveView app. The primary page is a
 LiveView. While LiveViews execute in their own process and, as such, don't
