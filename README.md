@@ -1,6 +1,8 @@
 # LunaTakeHome
 
-This project is a solution for the "Build an Open Graph previewer" take home project.
+This project is a solution for the "Build an Open Graph previewer" project.
+The purpose is to present a page that allows users to preview an Open Graph
+image from any given URL. The page shouldn't block while the image is being retrieved.
 
 The project is implemented as a Phoenix LiveView app. The primary page is a
 LiveView. While LiveViews execute in their own process and, as such, don't
